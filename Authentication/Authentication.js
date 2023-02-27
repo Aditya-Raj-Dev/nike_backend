@@ -7,7 +7,7 @@ const authenication=(req,res,next)=>{
         let token=req.headers.authorization
         try{
           var decoded =jwt.verify(token,process.env.SECRET_KEY)
-          console.log(decoded,"ksa")
+          console.log(decoded,"authentiction")
           req.body.user=decoded.userid;
           next() 
         }

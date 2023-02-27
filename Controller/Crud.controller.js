@@ -89,7 +89,7 @@ const Changequantity=(model)=> async (req,res)=>{
 
 const PostFavourite = (model) => async (req, res) => {
   try {
-     const old=await model.find({_id:req.body._id})
+     const old=await model.find(req.body)
    if(old.length===0){
  const data = await model.create({...req.body});
     res.status(201).send({"msg":"success","data":data});

@@ -9,7 +9,7 @@ const FavouritesSchema= mongoose.Schema({
     img:FavouriteArray,
     category:FavouriteString,
     gender:FavouriteString,
-    size:FavouriteString,
+    size:FavouriteArray,
     rating:FavouriteNumber,
     description:FavouriteString,
     price:FavouriteNumber,
