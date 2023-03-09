@@ -112,4 +112,14 @@ const getFavourites = (model) => async (req, res) => {
   }
 };
 
-module.exports = { PostMany, Postone,Getparams, GetAll, DeleteItem,getFavourites,PostFavourite,Addtocart,Changequantity };
+const DeleteFav = (model) => async (req, res) => {
+  try {
+    await model.findByIdAndDelete(req.params.id);
+    const data = await model.find({ user: req.body.user })
+    res.status(201).send({ msg: "successfull", data: data });
+  } catch (e) {
+  
+  }
+};
+
+module.exports = { PostMany, Postone,Getparams, GetAll, DeleteItem,getFavourites,PostFavourite,Addtocart,Changequantity ,DeleteFav};
